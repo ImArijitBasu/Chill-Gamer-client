@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useLoaderData } from "react-router-dom";
 import MainLayout from "./Layout/MainLayout.jsx";
 import AllReviews from "./Pages/AllReviews.jsx";
 import AddReviews from "./Pages/AddReviews.jsx";
