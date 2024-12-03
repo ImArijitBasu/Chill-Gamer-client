@@ -1,13 +1,34 @@
 import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const ReviewDetails = () => {
   const review = useLoaderData();
-  console.log(review);
   const { user } = useContext(AuthContext);
+  const email  = user.email
+  const name = user.displayName;
+  const uid = review._id
+  const watcherData = {
+    name , email , uid
+  }
+  const handleAddToWatchlist = () => {
 
-  const handleAddToWatchlist = () => {};
+
+    fetch('http://localhost:5000/watchlist',{
+        method: "POST",
+        headers:{
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(watcherData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        toast.success("successfully added to the watchList")
+    })
+
+  };
   return (
     <div className="container dark:text-black mx-auto border mb-10 rounded-lg bg-slate-50 flex flex-col md:flex-row p-5 justify-center items-center gap-10">
       <div className="p-5 bg-slate-100 ">
