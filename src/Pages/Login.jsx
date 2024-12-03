@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Loading from "../Components/Loading";
 const Login = () => {
   const { signInUser, googleSignIn,setUser ,user , loading} = useContext(AuthContext);
   const handleLogin = (e) => {
@@ -26,7 +27,9 @@ const Login = () => {
     });
   };
   console.log(user?.displayName);
-
+  if(loading){
+    return <Loading></Loading>
+}
   return (
     <div>
       <div className="hero bg-base-200  h-[1000px] ">
