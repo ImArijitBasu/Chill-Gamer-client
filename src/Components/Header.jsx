@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Theme from "./Theme";
 
 const Header = () => {
@@ -10,6 +10,11 @@ const Header = () => {
         <li><NavLink to="/addReviews">Add Reviews</NavLink></li>
         <li><NavLink to="/myReview">My Review</NavLink></li>
         <li><NavLink to="/myWatchList">Game WatchList</NavLink></li>
+    </>
+
+    const authentications = <>
+        <NavLink className="btn mr-2" to="/register">Register</NavLink>
+        <NavLink className="btn mr-2" to="/login">Login</NavLink>
     </>
         
     
@@ -37,7 +42,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 text-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {buttons}
             </ul>
@@ -50,6 +55,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
+            {authentications}
           <a className="btn"><Theme></Theme></a>
         </div>
       </div>
