@@ -4,7 +4,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 const Register = () => {
-    const {signUpUser , manageProfile} = useContext(AuthContext)
+    const {signUpUser , manageProfile ,user} = useContext(AuthContext)
     const navigate = useNavigate();
     const [error, setError] = useState("");
     const handleFormSubmit = (e) => {
@@ -31,6 +31,7 @@ const Register = () => {
           Swal.fire('successful')
             navigate("/");
 
+            console.log(res.user);
           return manageProfile(name, image);
         });
       };

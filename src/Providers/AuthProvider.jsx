@@ -52,11 +52,11 @@ const AuthProvider = ({ children }) => {
         setUser(null);
       }
       setLoading(false);
-
+    });
       return () => {
         unsubscribe();
       };
-    });
+  
   }, []);
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
 };

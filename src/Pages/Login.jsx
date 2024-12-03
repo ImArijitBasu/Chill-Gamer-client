@@ -28,7 +28,6 @@ const Login = () => {
       Swal.fire('successfully logged in as' , result?.user?.displayName)
     });
   };
-  console.log(user?.displayName);
   if(loading){
     return <Loading></Loading>
 }
