@@ -1,23 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Theme from "./Theme";
-
+import { AuthContext } from "../Providers/AuthProvider";
+import { Tooltip } from "react-tooltip";
 const Header = () => {
-
-    const buttons = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/allReviews">All Reviews</NavLink></li>
-        <li><NavLink to="/addReviews">Add Reviews</NavLink></li>
-        <li><NavLink to="/myReview">My Review</NavLink></li>
-        <li><NavLink to="/myWatchList">Game WatchList</NavLink></li>
+  const { user, signOutHandle } = useContext(AuthContext);
+  const buttons = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/allReviews">All Reviews</NavLink>
+      </li>
+      <li>
+        <NavLink to="/addReviews">Add Reviews</NavLink>
+      </li>
+      <li>
+        <NavLink to="/myReview">My Review</NavLink>
+      </li>
+      <li>
+        <NavLink to="/myWatchList">Game WatchList</NavLink>
+      </li>
     </>
+  );
 
-    const authentications = <>
-        <NavLink className="btn mr-2" to="/register">Register</NavLink>
-        <NavLink className="btn mr-2" to="/login">Login</NavLink>
+  const authentications = (
+    <>
+      <NavLink className="btn mr-2" to="/register">
+        Register
+      </NavLink>
+      <NavLink className="btn mr-2" to="/login">
+        Login
+      </NavLink>
     </>
-        
-    
+  );
 
   return (
     <div>
@@ -47,16 +64,34 @@ const Header = () => {
               {buttons}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">CHILL <span>GAMER</span></a>
+          <a className="btn btn-ghost text-xl">
+            CHILL <span>GAMER</span>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {buttons}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{buttons}</ul>
         </div>
         <div className="navbar-end">
-            {authentications}
-          <a className="btn"><Theme></Theme></a>
+          {user ? (<>
+                <img
+                  width={60}
+                  className="rounded-full border-orange-500 border-2 hover:shadow-2xl"
+                  src={user.photoURL}
+                  alt=""
+                  data-tooltip-id="user-tooltip"
+                  data-tooltip-content={`${user?.displayName || "User"}`} 
+                />
+                <Tooltip id="user-tooltip" place="top" type="dark" effect="solid" />
+                <Link className="btn mx-2 text-lg" onClick={signOutHandle}>
+                  Logout
+                </Link>
+                </>
+          ) : (
+            authentications
+          )}
+          <a className="btn">
+            <Theme></Theme>
+          </a>
         </div>
       </div>
     </div>
