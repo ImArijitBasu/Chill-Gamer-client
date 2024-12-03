@@ -13,12 +13,16 @@ import Register from "./Pages/Register.jsx";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Home from './Pages/Home.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
     children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
       {
         path: "/allReviews",
         element: <AllReviews></AllReviews>,
