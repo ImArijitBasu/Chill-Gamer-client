@@ -11,10 +11,13 @@ const MainLayout = () => {
 }
   return (
     <div className="dark:bg-slate-900 dark:text-white h-screen">
-      <div className="container mx-auto py-5">
+      <div className="pb-5">
         <Header></Header>
       </div>
+      <div className="px-3">
+
       <Outlet></Outlet>
+      </div>
       <div className="w-full">
         <Footer></Footer>
       </div>

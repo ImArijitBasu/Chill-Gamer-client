@@ -25,6 +25,7 @@ const Login = () => {
   const handleGoogle = () => {
     googleSignIn().then((result) => {
       console.log(result.user);
+      navigate('/')
       Swal.fire('successfully logged in as' , result?.user?.displayName)
     });
   };

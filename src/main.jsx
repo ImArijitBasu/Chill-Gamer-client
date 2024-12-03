@@ -14,6 +14,8 @@ import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Home from './Pages/Home.jsx'
+import ReviewDetails from './Pages/ReviewDetails.jsx'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/allReviews",
         element: <AllReviews></AllReviews>,
+        loader: () => fetch('http://localhost:5000/games'),
       },
       {
         path: "/addReviews",
@@ -42,6 +45,11 @@ const router = createBrowserRouter([
             <MyReviews></MyReviews>,
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/allReview/:id",
+        element: <ReviewDetails></ReviewDetails>,
+        loader : ({params}) => fetch(`http://localhost:5000/games/${params.id}`)
       },
       {
         path: "/myWatchList",
