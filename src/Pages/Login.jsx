@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Loading from "../Components/Loading";
 const Login = () => {
+  const navigate = useNavigate()
   const { signInUser, googleSignIn,setUser ,user , loading} = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,6 +15,7 @@ const Login = () => {
     signInUser(email, password).then((result) => {
       console.log(result.user);
       Swal.fire('successfully logged in')
+      navigate('/')
     }).catch(error=>{
         if(error){
             Swal.fire('invalid credential')

@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import Theme from "./Theme";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Tooltip } from "react-tooltip";
 const Header = () => {
   const { user, signOutHandle } = useContext(AuthContext);
+  const navigate = useNavigate()
   const buttons = (
     <>
       <li>
@@ -24,7 +25,10 @@ const Header = () => {
       </li>
     </>
   );
-
+  const handleSignOut = () => {
+    navigate('/')
+    signOutHandle()
+  }
   const authentications = (
     <>
       <NavLink className="btn mr-2" to="/register">
@@ -82,7 +86,7 @@ const Header = () => {
                   data-tooltip-content={`${user?.displayName || "User"}`} 
                 />
                 <Tooltip id="user-tooltip" place="top" type="dark" effect="solid" />
-                <Link className="btn mx-2 text-lg" onClick={signOutHandle}>
+                <Link className="btn mx-2 text-lg" onClick={handleSignOut}>
                   Logout
                 </Link>
                 </>
