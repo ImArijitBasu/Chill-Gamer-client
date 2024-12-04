@@ -37,10 +37,10 @@ const Register = () => {
       };
   return (
     <div>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero bg-slate-200 dark:bg-slate-900 min-h-screen">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Join Us Now!</h1>
+            <h1 className="text-5xl font-bold text-black dark:text-white">Join Us Now!</h1>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleFormSubmit} className="card-body">
