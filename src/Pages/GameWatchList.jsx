@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const GameWatchList = () => {
   const { user } = useContext(AuthContext);
@@ -12,14 +13,31 @@ const GameWatchList = () => {
       });
   }, [user.email]);
   const clearWatchList = () => {
-    fetch(`http://localhost:5000/clearWatchlist?email=${user.email}`,{
-      method: "DELETE",
-    })
-    .then(res => res.json())
-    .then(data=>{
-      console.log(data);
-      setWatchList([])
-    })
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete All!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/clearWatchlist?email=${user.email}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setWatchList([]);
+          });
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
+    });
   };
   return (
     <div className="container mx-auto">

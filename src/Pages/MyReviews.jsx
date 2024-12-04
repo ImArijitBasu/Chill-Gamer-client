@@ -53,7 +53,7 @@ const MyReviews = () => {
   }
   return (
     <div className="container mx-auto">
-      <h1 className="text-center text-2xl font-bold my-4">My Reviews</h1>
+      <h1 className="text-center text-3xl font-bold my-4 uppercase">My Reviews</h1>
       {reviews.length === 0 ? (
         <p className="text-center">No reviews found</p>
       ) : (

@@ -10,14 +10,14 @@ const MainLayout = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="dark:bg-slate-900 dark:text-white h-screen flex flex-col">
+    <div className="dark:bg-slate-900 dark:text-white h-screen flex flex-col font-poppins">
       <div className="pb-5">
         <Header></Header>
       </div>
       <div className="px-3 pb-20 dark:bg-slate-900 flex-1">
         <Outlet></Outlet>
       </div>
-      <div className="w-full dark:bg-slate-900">
+      <div className="w-full dark:bg-slate-950 bg-base-200">
         <Footer></Footer>
       </div>
     </div>

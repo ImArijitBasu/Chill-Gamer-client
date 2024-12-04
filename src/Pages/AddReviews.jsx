@@ -43,8 +43,9 @@ const AddReviews = () => {
 
   return (
     <div className="container mx-auto my-8 text-black">
+      <p className="text-3xl font-bold uppercase text-center text-slate-900">add your experience here</p>
     <h2 className="text-3xl font-semibold text-center mb-6 text-white">Add a New Review</h2>
-    <form onSubmit={handleFormSubmit} className="bg-white p-6 shadow-md rounded max-w-xl mx-auto">
+    <form onSubmit={handleFormSubmit} className="bg-slate-200 p-6 shadow-md rounded max-w-xl mx-auto">
       <div className="mb-4">
         <label htmlFor="coverImage" className="block text-sm font-medium mb-1">
           Game Cover Image (URL):

@@ -37,12 +37,12 @@ const UpdateReview = () => {
   };
   return (
     <div className="container mx-auto my-8 text-black">
-      <h2 className="text-3xl font-semibold text-center mb-6 text-white capitalize">
+      <h2 className="text-3xl font-semibold text-center mb-6 text-black dark:text-white capitalize">
         Update your review
       </h2>
       <form
         onSubmit={handleFormSubmit}
-        className="bg-white p-6 shadow-md rounded max-w-xl mx-auto"
+        className="bg-slate-200 p-6 shadow-md rounded max-w-xl mx-auto"
       >
         <div className="mb-4">
           <label

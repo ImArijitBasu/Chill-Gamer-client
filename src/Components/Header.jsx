@@ -31,17 +31,17 @@ const Header = () => {
   }
   const authentications = (
     <>
-      <NavLink className="btn mr-2" to="/register">
+      <NavLink className="btn mr-2 bg-blue-500 text-white border-slate-500 rounded-3xl hover:bg-blue-600" to="/register">
         Register
       </NavLink>
-      <NavLink className="btn mr-2" to="/login">
+      <NavLink className="btn mr-2 bg-blue-500 text-white border-slate-500 rounded-3xl hover:bg-blue-600" to="/login">
         Login
       </NavLink>
     </>
   );
 
   return (
-    <div className="w-full bg-base-100 dark:bg-gray-600">
+    <div className="w-full bg-base-100 dark:bg-slate-950 border-b-2 border-blue-500">
       <div className="navbar container mx-auto py-5">
         <div className="navbar-start">
           <div className="dropdown">
@@ -68,32 +68,32 @@ const Header = () => {
               {buttons}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
-            CHILL <span>GAMER</span>
+          <a className="text-2xl font-extrabold md:bg-gradient-to-l from-blue-700 to-transparent ">
+            CHILL <span className="p-1 bg-gradient-to-l from-blue-500 to-transparent md:text-slate-200">GAMER</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{buttons}</ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end scale-50 md:scale-100">
           {user ? (<>
                 <img
                   width={60}
-                  className="rounded-full border-orange-500 border-2 hover:shadow-2xl"
+                  className="rounded-full border-blue-500 border-4 hover:shadow-2xl"
                   src={user.photoURL}
-                  alt=""
+                  alt="user"
                   data-tooltip-id="user-tooltip"
                   data-tooltip-content={`${user?.displayName || "User"}`} 
                 />
                 <Tooltip id="user-tooltip" place="top" type="dark" effect="solid" />
-                <Link className="btn mx-2 text-lg" onClick={handleSignOut}>
+                <Link className="btn mx-2 text-lg bg-blue-500 text-white border-slate-500 rounded-3xl hover:bg-blue-600" onClick={handleSignOut}>
                   Logout
                 </Link>
                 </>
           ) : (
             authentications
           )}
-          <a className="btn">
+          <a className="">
             <Theme></Theme>
           </a>
         </div>
