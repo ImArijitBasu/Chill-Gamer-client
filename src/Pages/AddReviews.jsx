@@ -42,8 +42,8 @@ const AddReviews = () => {
     }
 
   return (
-    <div className="container mx-auto my-8">
-    <h2 className="text-3xl font-semibold text-center mb-6">Add a New Review</h2>
+    <div className="container mx-auto my-8 text-black">
+    <h2 className="text-3xl font-semibold text-center mb-6 text-white">Add a New Review</h2>
     <form onSubmit={handleFormSubmit} className="bg-white p-6 shadow-md rounded max-w-xl mx-auto">
       <div className="mb-4">
         <label htmlFor="coverImage" className="block text-sm font-medium mb-1">

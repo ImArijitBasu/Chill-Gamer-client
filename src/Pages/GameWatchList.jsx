@@ -28,7 +28,7 @@ const GameWatchList = () => {
                 <th className="border-4 border-blue-500">Rating</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-center capitalize">
               {watchList.map((item) => (
                 <tr key={item._id}>
                   <td className="border border-gray-300 p-2">
@@ -38,7 +38,7 @@ const GameWatchList = () => {
                     {item.gameDetails?.[0]?.genre || "Unknown Genre"}
                   </td>
                   <td className="border border-gray-300 p-2">
-                    {item.gameDetails?.[0]?.rating || "N/A"}
+                    {item.gameDetails?.[0]?.rating || "N/A"} / 10
                   </td>
                 </tr>
               ))}

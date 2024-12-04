@@ -18,7 +18,7 @@ const ReviewCard = ({ review }) => {
       <div className="card bg-slate-100 shadow-lg dark:text-black">
         <figure>
           <img
-          className="object-cover w-full px-5 max-h-52 rounded-b-2xl"
+          className="object-cover w-full px-5 h-52 rounded-b-2xl border-t-4 border-blue-500"
             src={coverImage}
             alt="games"
           />

@@ -1,7 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider, useLoaderData } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLoaderData,
+} from "react-router-dom";
 import MainLayout from "./Layout/MainLayout.jsx";
 import AllReviews from "./Pages/AllReviews.jsx";
 import AddReviews from "./Pages/AddReviews.jsx";
@@ -13,8 +17,9 @@ import Register from "./Pages/Register.jsx";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Home from './Pages/Home.jsx'
-import ReviewDetails from './Pages/ReviewDetails.jsx'
+import Home from "./Pages/Home.jsx";
+import ReviewDetails from "./Pages/ReviewDetails.jsx";
+import UpdateReview from "./Pages/UpdateReview.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,12 +28,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/allReviews",
         element: <AllReviews></AllReviews>,
-        loader: () => fetch('http://localhost:5000/games'),
+        loader: () => fetch("http://localhost:5000/games"),
       },
       {
         path: "/addReviews",
@@ -47,9 +52,18 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateReview></UpdateReview>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/allReview/:id",
         element: <ReviewDetails></ReviewDetails>,
-        loader : ({params}) => fetch(`http://localhost:5000/games/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/games/${params.id}`),
       },
       {
         path: "/myWatchList",
