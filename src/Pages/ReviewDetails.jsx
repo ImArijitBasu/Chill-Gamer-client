@@ -30,15 +30,15 @@ const ReviewDetails = () => {
 
   };
   return (
-    <div className="container dark:text-black mx-auto border mb-10 rounded-lg bg-slate-50 flex flex-col md:flex-row p-5 justify-center items-center gap-10">
+    <div className="container dark:text-black mx-auto dark:border-8 border-4 mb-10 rounded-lg bg-slate-50 dark:bg-slate-500 flex flex-col md:flex-row p-5 justify-center items-center gap-10 ">
       <div className="p-5 bg-slate-100 ">
-      <img className="w-40" src={review.coverImage} alt={review.gameTitle} />
+      <img className="w-40 h-40 object-cover" src={review.coverImage} alt={review.gameTitle} />
       <h1>{review.gameTitle}</h1>
       <p>
         <strong>Genre:</strong> {review.genre}
       </p>
       </div>
-      <div className="">
+      <div className="dark:text-white">
       <p className="max-w-72 text-justify">
         <strong>Description:</strong> {review.reviewDescription}
       </p>
@@ -52,7 +52,7 @@ const ReviewDetails = () => {
       <p>
         <strong>Reviewer Email:</strong> {review.userEmail}
       </p>
-      <button className="btn bg-slate-500 text-white mt-3" onClick={handleAddToWatchlist}>Add to Watchlist</button>
+      <button className="btn bg-blue-500 text-white mt-3" onClick={handleAddToWatchlist}>Add to Watchlist</button>
       </div>
      
 

@@ -9,19 +9,39 @@ const Header = () => {
   const buttons = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className={({ isActive }) =>
+              isActive
+                ? "text-white font-bold border-b-4 border-blue-900 hover:bg-blue-300 bg-blue-500"
+                : "dark:text-white"
+            } to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/allReviews">All Reviews</NavLink>
+        <NavLink className={({ isActive }) =>
+              isActive
+                ? "text-white font-bold border-b-4 border-blue-900 hover:bg-blue-300 bg-blue-500"
+                : "dark:text-white"
+            }  to="/allReviews">All Reviews</NavLink>
       </li>
       <li>
-        <NavLink to="/addReviews">Add Reviews</NavLink>
+        <NavLink className={({ isActive }) =>
+              isActive
+                ? "text-white font-bold border-b-4 border-blue-900 hover:bg-blue-300 bg-blue-500"
+                : "dark:text-white"
+            }  to="/addReviews">Add Reviews</NavLink>
       </li>
       <li>
-        <NavLink to="/myReview">My Review</NavLink>
+        <NavLink className={({ isActive }) =>
+              isActive
+                ? "text-white font-bold border-b-4 border-blue-900 hover:bg-blue-300 bg-blue-500"
+                : "dark:text-white"
+            }  to="/myReview">My Review</NavLink>
       </li>
       <li>
-        <NavLink to="/myWatchList">Game WatchList</NavLink>
+        <NavLink className={({ isActive }) =>
+              isActive
+                ? "text-white font-bold border-b-4 border-blue-900 hover:bg-blue-300 bg-blue-500"
+                : "dark:text-white"
+            }  to="/myWatchList">Game WatchList</NavLink>
       </li>
     </>
   );

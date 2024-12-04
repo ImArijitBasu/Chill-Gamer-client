@@ -42,7 +42,7 @@ const GameWatchList = () => {
   return (
     <div className="container mx-auto">
       <p className="text-center text-3xl font-bold"> MY WATCH LIST</p>
-      <p>Total items⇒ {watchList.length}</p>
+      <p className="font-thin text-xl">Total items⇒ {watchList.length}</p>
       <div className="my-5">
         {watchList.length === 0 ? (
           <p>No games available in your watchlist</p>
