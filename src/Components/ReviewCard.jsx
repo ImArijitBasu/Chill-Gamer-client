@@ -15,11 +15,11 @@ const ReviewCard = ({ review }) => {
   } = review;
   return (
     <div>
-      <div className="card bg-slate-100 dark:bg-slate-500 dark:text-white shadow-lg rounded-b-2xl border-t-4 border-blue-500 dark:border-b-4 dark:border-t-transparent dark:border-red-500">
+      <div className="card h-[420px] bg-slate-100 dark:bg-slate-500 dark:text-white shadow-lg rounded-b-2xl border-t-4 border-blue-500 dark:border-b-4 dark:border-t-transparent dark:border-red-500">
         <figure>
           <img
-          className="object-cover w-full px-5 h-52 "
-            src={coverImage}
+          className="object-cover object-top w-full px-5 h-52 "
+            src={review?.coverImage}
             alt="games"
           />
         </figure>

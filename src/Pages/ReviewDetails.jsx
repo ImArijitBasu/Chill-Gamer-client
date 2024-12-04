@@ -52,6 +52,9 @@ const ReviewDetails = () => {
       <p>
         <strong>Reviewer Email:</strong> {review.userEmail}
       </p>
+      <p>
+        <strong>Publishing year:</strong> {review.publishingYear}
+      </p>
       <button className="btn bg-blue-500 text-white mt-3" onClick={handleAddToWatchlist}>Add to Watchlist</button>
       </div>
      
