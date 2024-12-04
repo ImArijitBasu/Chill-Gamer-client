@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
@@ -20,6 +21,36 @@ const MyReviews = () => {
   const handleUpdate = (id) => {
     navigate(`/update/${id}`);
   };
+  const handleDelete = (id) =>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/reviews/${id}`,{
+          method: "DELETE"
+        })
+        .then(res=> res.json())
+        .then(data => {
+          if(data.deletedCount){
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success"
+            });
+            setReview((prevReviews) => prevReviews.filter((review) => review._id !== id));
+          }
+        })
+
+        
+      }
+    });
+  }
   return (
     <div className="container mx-auto">
       <h1 className="text-center text-2xl font-bold my-4">My Reviews</h1>
@@ -50,7 +81,7 @@ const MyReviews = () => {
                   </button>
                   <button
                     className="btn btn-sm bg-red-500 text-white"
-                    // onClick={() => handleDelete(review._id)}
+                    onClick={() => handleDelete(review._id)}
                   >
                     Delete
                   </button>
