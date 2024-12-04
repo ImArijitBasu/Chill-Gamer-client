@@ -11,10 +11,19 @@ const GameWatchList = () => {
         setWatchList(data);
       });
   }, [user.email]);
-
+  const clearWatchList = () => {
+    fetch(`http://localhost:5000/clearWatchlist?email=${user.email}`,{
+      method: "DELETE",
+    })
+    .then(res => res.json())
+    .then(data=>{
+      console.log(data);
+      setWatchList([])
+    })
+  };
   return (
     <div className="container mx-auto">
-        <p className="text-center text-3xl font-bold">  MY WATCH LIST</p>
+      <p className="text-center text-3xl font-bold"> MY WATCH LIST</p>
       <p>Total items⇒ {watchList.length}</p>
       <div className="my-5">
         {watchList.length === 0 ? (
@@ -29,7 +38,7 @@ const GameWatchList = () => {
               </tr>
             </thead>
             <tbody className="text-center capitalize">
-              {watchList.map((item) => (
+              {watchList?.map((item) => (
                 <tr key={item._id}>
                   <td className="border border-gray-300 p-2">
                     {item.gameDetails?.[0]?.gameTitle || "Unknown Title"}
@@ -45,6 +54,9 @@ const GameWatchList = () => {
             </tbody>
           </table>
         )}
+      </div>
+      <div onClick={clearWatchList} className="btn">
+        clear all
       </div>
     </div>
   );
