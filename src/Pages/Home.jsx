@@ -3,6 +3,8 @@ import React from "react";
 import CarouselPage from "../Components/Carousel";
 import HighestRated from "../Components/HighestRated";
 import TypewriterEx from "../Components/TypeWriter";
+import ExtraOne from "../Components/ExtraOne";
+import ExtraTwo from "../Components/ExtraTwo";
 
 const Home = () => {
   return (
@@ -15,6 +17,13 @@ const Home = () => {
       </div>
       <div className="">
         <HighestRated></HighestRated>
+      </div>
+      <div className="">
+        <ExtraOne></ExtraOne>
+      </div>
+      <div className="mt-10">
+        <h1 className="text-center font-bold text-3xl py-5 uppercase">Games Popularity based on publication date</h1>
+        <ExtraTwo></ExtraTwo>
       </div>
     </div>
   );
