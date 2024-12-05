@@ -42,19 +42,19 @@ const AllReviews = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+              className="dropdown-content space-y-2 menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
             >
               <li onClick={()=>handleSort('ratAsc')}>
-                <a>Rating ↓</a>
+                <a className="dark:bg-slate-700">Rating ↓</a>
               </li>
               <li onClick={()=>handleSort('ratDsc')}>
-                <a>Rating ↑</a>
+                <a className="dark:bg-slate-700">Rating ↑</a>
               </li>
               <li onClick={()=>handleSort('yearAsc')}>
-                <a>Year ↓</a>
+                <a className="dark:bg-slate-700">Year ↓</a>
               </li>
               <li onClick={()=>handleSort('yearDsc')}>
-                <a>Year ↑</a>
+                <a className="dark:bg-slate-700">Year ↑</a>
               </li>
             </ul>
           </div>
@@ -64,25 +64,25 @@ const AllReviews = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+              className="dropdown-content space-y-2 menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
             >
               <li onClick={()=>handleFilter("all")}>
-                <a>All data</a>
+                <a className="dark:bg-slate-700">All data</a>
               </li>
               <li onClick={()=>handleFilter("Action")}>
-                <a>Action</a>
+                <a className="dark:bg-slate-700">Action</a>
               </li>
               <li onClick={()=>handleFilter("RPG")}>
-                <a>RPG</a>
+                <a className="dark:bg-slate-700">RPG</a>
               </li>
               <li onClick={()=>handleFilter("Adventure")}>
-                <a>Adventure</a>
+                <a className="dark:bg-slate-700">Adventure</a>
               </li>
               <li onClick={()=>handleFilter("Strategy")}>
-                <a>Strategy</a>
+                <a className="dark:bg-slate-700">Strategy</a>
               </li>
               <li onClick={()=>handleFilter("Puzzle")}>
-                <a>Puzzle</a>
+                <a className="dark:bg-slate-700">Puzzle</a>
               </li>
             </ul>
           </div>

@@ -22,7 +22,7 @@ const AddReviews = () => {
 
           console.log(formData);
 
-          fetch('http://localhost:5000/games' ,{
+          fetch('https://assignment-10-smoky.vercel.app/games' ,{
             method: "POST" , 
             headers : {
                 "Content-Type" : "application/json",

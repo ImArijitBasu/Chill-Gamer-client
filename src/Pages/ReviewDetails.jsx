@@ -15,7 +15,7 @@ const ReviewDetails = () => {
   const handleAddToWatchlist = () => {
 
 
-    fetch('http://localhost:5000/watchlist',{
+    fetch('https://assignment-10-smoky.vercel.app/watchlist',{
         method: "POST",
         headers:{
             'content-type': 'application/json'

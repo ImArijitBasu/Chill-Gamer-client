@@ -6,7 +6,7 @@ const GameWatchList = () => {
   const { user } = useContext(AuthContext);
   const [watchList, setWatchList] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/watchlistWithGames?email=${user.email}`)
+    fetch(`https://assignment-10-smoky.vercel.app/watchlistWithGames?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setWatchList(data);
@@ -23,7 +23,7 @@ const GameWatchList = () => {
       confirmButtonText: "Yes, delete All!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/clearWatchlist?email=${user.email}`, {
+        fetch(`https://assignment-10-smoky.vercel.app/clearWatchlist?email=${user.email}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

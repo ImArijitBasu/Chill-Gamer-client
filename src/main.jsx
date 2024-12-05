@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/allReviews",
         element: <AllReviews></AllReviews>,
-        loader: () => fetch("http://localhost:5000/games"),
+        loader: () => fetch("https://assignment-10-smoky.vercel.app/games"),
       },
       {
         path: "/addReviews",
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         path: "/allReview/:id",
         element: <ReviewDetails></ReviewDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/games/${params.id}`),
+          fetch(`https://assignment-10-smoky.vercel.app/games/${params.id}`),
       },
       {
         path: "/myWatchList",

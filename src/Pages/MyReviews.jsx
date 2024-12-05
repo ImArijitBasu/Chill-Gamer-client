@@ -11,7 +11,7 @@ const MyReviews = () => {
   const email = user.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${email}`)
+    fetch(`https://assignment-10-smoky.vercel.app/reviews?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +32,7 @@ const MyReviews = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/reviews/${id}`,{
+        fetch(`https://assignment-10-smoky.vercel.app/reviews/${id}`,{
           method: "DELETE"
         })
         .then(res=> res.json())

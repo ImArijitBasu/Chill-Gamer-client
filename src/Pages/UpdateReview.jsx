@@ -8,7 +8,7 @@ const UpdateReview = () => {
   const [review, setReview] = useState([]);
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${id}`)
+    fetch(`https://assignment-10-smoky.vercel.app/reviews/${id}`)
       .then((res) => res.json())
       .then((data) => setReview(data));
     console.log(review);
@@ -25,7 +25,7 @@ const UpdateReview = () => {
         genre: e.target.genre.value,
       };
 
-    fetch(`http://localhost:5000/reviews/${id}`,{
+    fetch(`https://assignment-10-smoky.vercel.app/reviews/${id}`,{
         method : "PATCH",
         headers: {
             "content-type" : "application/json",
