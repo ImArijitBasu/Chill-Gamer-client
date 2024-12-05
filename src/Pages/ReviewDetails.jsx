@@ -24,7 +24,6 @@ const ReviewDetails = () => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
         toast.success("successfully added to the watchList")
     })
 

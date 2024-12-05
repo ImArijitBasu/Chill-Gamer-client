@@ -8,7 +8,6 @@ const HighestRated = () => {
     fetch("https://assignment-10-smoky.vercel.app/highestRatedGame")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setGames(data);
       });
   }, []);

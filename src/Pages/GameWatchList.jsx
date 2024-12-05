@@ -28,7 +28,6 @@ const GameWatchList = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             setWatchList([]);
           });
         Swal.fire({

@@ -31,7 +31,6 @@ const Register = () => {
           Swal.fire('successful')
             navigate("/");
 
-            console.log(res.user);
           return manageProfile(name, image);
         });
       };

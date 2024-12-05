@@ -6,12 +6,10 @@ const UpdateReview = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
   const [review, setReview] = useState([]);
-  console.log(id);
   useEffect(() => {
     fetch(`https://assignment-10-smoky.vercel.app/reviews/${id}`)
       .then((res) => res.json())
       .then((data) => setReview(data));
-    console.log(review);
   }, [id]);
   const handleFormSubmit = (e) => {
     e.preventDefault();

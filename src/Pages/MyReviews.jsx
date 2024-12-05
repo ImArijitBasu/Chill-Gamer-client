@@ -7,14 +7,12 @@ const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate()
   const [reviews, setReview] = useState([]);
-  console.log(user.email);
   const email = user.email;
 
   useEffect(() => {
     fetch(`https://assignment-10-smoky.vercel.app/reviews?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setReview(data);
       });
   }, []);

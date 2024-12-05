@@ -20,7 +20,6 @@ const AddReviews = () => {
             userName: user?.displayName,
           };
 
-          console.log(formData);
 
           fetch('https://assignment-10-smoky.vercel.app/games' ,{
             method: "POST" , 
@@ -30,7 +29,6 @@ const AddReviews = () => {
             body: JSON.stringify(formData)
           })
           .then(res=>{
-            console.log(res);
             if(res.ok){
                 Swal.fire('Your review added successfully')
                 e.target.reset();

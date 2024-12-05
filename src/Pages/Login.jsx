@@ -10,10 +10,8 @@ const Login = () => {
     e.preventDefault();
     const password = e.target.password.value;
     const email = e.target.email.value;
-    console.log(email, password);
 
     signInUser(email, password).then((result) => {
-      console.log(result.user);
       Swal.fire('successfully logged in')
       navigate('/')
     }).catch(error=>{
@@ -24,7 +22,6 @@ const Login = () => {
   };
   const handleGoogle = () => {
     googleSignIn().then((result) => {
-      console.log(result.user);
       navigate('/')
       Swal.fire('successfully logged in as' , result?.user?.displayName)
     });
