@@ -42,8 +42,8 @@ const Register = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold text-black dark:text-white">Join Us Now!</h1>
           </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleFormSubmit} className="card-body">
+          <div className="card bg-base-100  w-56 md:w-auto  shrink-0 shadow-2xl">
+            <form onSubmit={handleFormSubmit} className="card-body p-4">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>

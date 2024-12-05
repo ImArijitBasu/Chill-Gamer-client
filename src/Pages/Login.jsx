@@ -39,8 +39,8 @@ const Login = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold text-slate-500">Login now!</h1>
           </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleLogin} className="card-body text-black">
+          <div className="card bg-base-100 w-56 md:w-auto shrink-0 shadow-2xl">
+            <form onSubmit={handleLogin} className="card-body w-auto md:w-auto text-black p-4 ">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -49,7 +49,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   required
                   
                 />
@@ -62,7 +62,7 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   required
                 />
                 <label className="label">
@@ -82,7 +82,7 @@ const Login = () => {
               >
                 Login with Google
               </button>
-              <p>New user? <Link className="text-blue-500" to="/register">register</Link></p>
+              <p className="dark:text-black">New user? <Link className="text-blue-500" to="/register">register</Link></p>
             </div>
           </div>
         </div>

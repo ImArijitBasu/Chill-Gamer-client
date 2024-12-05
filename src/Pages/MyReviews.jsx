@@ -52,12 +52,12 @@ const MyReviews = () => {
     });
   }
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto flex flex-col">
       <h1 className="text-center text-3xl font-bold my-4 uppercase">My Reviews</h1>
       {reviews.length === 0 ? (
         <p className="text-center">No reviews found</p>
       ) : (
-        <table className="table-auto w-full border">
+        <table className="table-auto w-auto md:w-full border overflow-x-hidden">
           <thead>
             <tr>
               <th className="border p-2">Game Title</th>
@@ -72,7 +72,7 @@ const MyReviews = () => {
                 <td className="border p-2">{review.gameTitle}</td>
                 <td className="border p-2">{review.genre}</td>
                 <td className="border p-2">{review.rating}/10</td>
-                <td className="border-none flex justify-center">
+                <td className="border-none flex justify-center flex-col md:flex-row">
                   <button
                     className="btn btn-sm bg-blue-500 text-white mr-2"
                     onClick={() => handleUpdate(review._id)}

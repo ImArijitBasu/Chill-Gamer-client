@@ -30,13 +30,13 @@ const Footer = () => {
             <label className="label">
               <span className="label-text">Enter your email address</span>
             </label>
-            <div className="md:join space-y-3 md:space-y-0">
+            <div className="space-y-3 md:space-y-0 flex flex-col md:flex-row">
               <input
                 type="text"
                 placeholder="username@site.com"
-                className="input input-bordered join-item"
+                className="input input-bordered join-item max-w-40"
               />
-              <button className="btn text-white bg-slate-600 border-slate-700 join-item">Join us now</button>
+              <button className="btn text-white bg-slate-600 border-slate-700 join-item max-w-40">Join us now</button>
             </div>
           </fieldset>
         </form>

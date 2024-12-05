@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement : <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         path: "/addReviews",
         element: (
           <PrivateRoute>
-            <AddReviews></AddReviews>,
+            <AddReviews></AddReviews>
           </PrivateRoute>
         ),
       },
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         path: "/myReview",
         element: (
           <PrivateRoute>
-            <MyReviews></MyReviews>,
+            <MyReviews></MyReviews>
           </PrivateRoute>
         ),
       },
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         path: "/myWatchList",
         element: (
           <PrivateRoute>
-            <GameWatchList></GameWatchList>,
+            <GameWatchList></GameWatchList>
           </PrivateRoute>
         ),
       },
@@ -83,7 +83,6 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
-
     ],
   },
 ]);

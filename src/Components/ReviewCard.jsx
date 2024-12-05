@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { Fade } from "react-awesome-reveal";
 const ReviewCard = ({ review }) => {
   const {
     _id,
@@ -14,7 +14,7 @@ const ReviewCard = ({ review }) => {
     userName,
   } = review;
   return (
-    <div>
+    <Fade>
       <div className="card h-[420px] bg-slate-100 dark:bg-slate-500 dark:text-white shadow-lg rounded-b-2xl border-t-4 border-blue-500 dark:border-b-4 dark:border-t-transparent dark:border-red-500">
         <figure>
           <img
@@ -34,7 +34,7 @@ const ReviewCard = ({ review }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 

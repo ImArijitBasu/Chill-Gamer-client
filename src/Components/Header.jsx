@@ -83,7 +83,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 text-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 dark:bg-slate-600 text-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {buttons}
             </ul>
@@ -93,9 +93,9 @@ const Header = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{buttons}</ul>
+          <ul className="menu menu-horizontal px-1 dark:bg-slate-900 rounded-3xl">{buttons}</ul>
         </div>
-        <div className="navbar-end scale-50 md:scale-100">
+        <div className="navbar-end scale-75 md:scale-100">
           {user ? (<>
                 <img
                   width={60}
