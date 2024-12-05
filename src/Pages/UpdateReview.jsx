@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UpdateReview = () => {
   const { id } = useParams();
@@ -31,7 +32,11 @@ const UpdateReview = () => {
         body: JSON.stringify(formData)
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data =>{
+        if(data.modifiedCount >0){
+          toast.success('Data updated successfully')
+        }
+      console.log(data)})
   };
   return (
     <div className="container mx-auto my-8 text-black">
