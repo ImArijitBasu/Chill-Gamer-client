@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "poppins" : "Poppins"
+        "poppins" : "Poppins",
+        "error" :  "Edu AU VIC WA NT Arrows",
       }
     },
   },

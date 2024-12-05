@@ -20,11 +20,13 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./Pages/Home.jsx";
 import ReviewDetails from "./Pages/ReviewDetails.jsx";
 import UpdateReview from "./Pages/UpdateReview.jsx";
+import ErrorPage from "./Pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement : <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -81,6 +83,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+
     ],
   },
 ]);
