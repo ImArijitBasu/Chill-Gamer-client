@@ -1,6 +1,6 @@
 # Chill Gamer: A Game Review Application
 ## Client Side
-**Live Site URL**: [https://your-live-site-link.com](https://assignment-10-arijit.web.app/)
+**Live Site URL**: [link 🔗](https://assignment-10-arijit.web.app/)
 
 Chill Gamer is a user-friendly game review application where users can explore and share their thoughts on various games. This platform allows you to interact with the gaming community by reading, writing, and rating game reviews.
 
