@@ -32,7 +32,7 @@ const AllReviews = () => {
       }
     }
   return (
-    <div className="container mx-auto dark:bg-slate-800 px-5 py-10 dark:shadow-2xl rounded-2xl dark:shadow-slate-600">
+    <div className="container mx-auto dark:bg-slate-800 px-5 py-28 dark:shadow-2xl rounded-2xl dark:shadow-slate-600">
       <div className="text-lg font-bold pb-5 border-b-4 mb-5 flex justify-between items-center">
         <p>Total reviews: {data.length}</p>
         <div className="">

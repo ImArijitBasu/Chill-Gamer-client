@@ -10,7 +10,10 @@ export default {
       fontFamily: {
         "poppins" : "Poppins",
         "error" :  "Edu AU VIC WA NT Arrows",
-      }
+      },
+      animation: {
+        spinSlow: 'spin 10s linear infinite', 
+      },
     },
   },
   plugins: [

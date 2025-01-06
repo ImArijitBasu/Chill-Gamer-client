@@ -5,13 +5,16 @@ import Swal from "sweetalert2";
 const GameWatchList = () => {
   const { user } = useContext(AuthContext);
   const [watchList, setWatchList] = useState([]);
+  const [loading, setLoading] = useState(true); 
   useEffect(() => {
     fetch(`https://assignment-10-smoky.vercel.app/watchlistWithGames?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setWatchList(data);
+        setLoading(false); 
       });
   }, [user.email]);
+
   const clearWatchList = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -38,13 +41,18 @@ const GameWatchList = () => {
       }
     });
   };
+
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-28">
       <p className="text-center text-3xl font-bold"> MY WATCH LIST</p>
-      <p className="font-thin text-xl">Total items⇒ {watchList.length}</p>
+      <p className="font-normal  text-sm">Total items : {watchList.length}</p>
       <div className="my-5">
-        {watchList.length === 0 ? (
-          <p>No games available in your watchlist</p>
+        {loading ? (
+          <p className="text-center">
+            <span className="loading loading-spinner text-info"></span>
+          </p>
+        ) : watchList.length === 0 ? (
+          <p className="text-center text-red-500">No data to show</p>
         ) : (
           <table className="w-full">
             <thead>
@@ -72,9 +80,9 @@ const GameWatchList = () => {
           </table>
         )}
       </div>
-      <div onClick={clearWatchList} className="btn">
+      <button disabled={watchList.length === 0} onClick={clearWatchList} className="btn btn-error text-white">
         clear all
-      </div>
+      </button>
     </div>
   );
 };

@@ -8,9 +8,9 @@ const ExtraOne = () => {
     }
   return (
     <div>
-      <section className="bg-gray-100 dark:bg-slate-500 py-12 px-5 mt-20 rounded-lg">
+      <section className="bg-gray-100 dark:bg-slate-500 py-12 px-5 mt-20 rounded-lg bg-opacity-50 backdrop-blur-lg">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 uppercase">Explore Game Categories</h2>
+          <h2 className="text-3xl font-bold mb-6 uppercase text-blue-900 dark:text-white">Explore top Game Categories</h2>
           <p className="text-lg text-gray-600 dark:text-blue-200 mb-8">
             Find your next favorite game by browsing through popular categories.
           </p>

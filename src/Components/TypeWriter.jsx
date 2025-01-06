@@ -9,7 +9,7 @@ const TypewriterEx = () => {
           words={['Welcome to Chill Gamer!', 'Enjoy Your Stay!','Share Your Mind']}
           loop={5}
           cursor
-          cursorStyle='_'
+          cursorStyle='🎲'
           typeSpeed={100}
           deleteSpeed={50}
           delaySpeed={1000}
