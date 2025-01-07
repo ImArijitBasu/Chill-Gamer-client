@@ -53,3 +53,11 @@ To run this project on your local machine, follow these steps:
 ### 1. Clone the repository:
 ```git clone https://github.com/ImArijitBasu/Chill-Gamer-client```
 
+### 2. Navigate to the project folder:
+```cd Chill-Gamer-client```
+
+### 3. Install the dependencies:
+```npm install```
+
+### 4. Start the development server:
+```npm start```
