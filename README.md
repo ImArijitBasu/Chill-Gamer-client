@@ -1,26 +1,55 @@
-# Chill Gamer: A Game Review Application
-## Client Side
-**Live Site URL**: [link 🔗](https://assignment-10-arijit.web.app/)
+# **Chill Gamer: A Game Review Application** 🎮
 
-Chill Gamer is a user-friendly game review application where users can explore and share their thoughts on various games. This platform allows you to interact with the gaming community by reading, writing, and rating game reviews.
+## **Overview**  
+Chill Gamer is a game review application that enables users to explore, rate, and share their thoughts on a variety of games. Users can interact with the gaming community, read reviews, and create their own reviews for games they’ve played. The platform is designed to offer a seamless experience with a focus on user interaction and engagement.
 
-## Features:
-- **Game Reviews**: Browse through reviews for popular games across different genres.
-- **Rating System**: Rate your favorite games and see how others have rated them.
-- **Watch List**: Add games to your personal watchlist to keep track of future reviews and updates.
-- **User Authentication**: Secure login and registration system with Google and email based authentication options.
-- **Responsive Design**: Fully responsive layout for an optimized experience on desktop, tablet, and mobile devices.
+**Live Site URL**: [Chill Gamer - Live Site](https://assignment-10-arijit.web.app/)
 
-## Technologies Used:
-- React.js
-- Node.js (Backend)
-- Express js
-- MongoDB
-- Firebase Authentication
+## **Features**  
+- **Game Reviews**: Browse reviews for popular games from various genres.
+- **Rating System**: Rate your favorite games and view the ratings from other players.
+- **Watch List**: Add games to your personal watchlist to track new updates and reviews.
+- **User Authentication**: Secure user login and registration using Google and email authentication.
+- **Responsive Design**: Fully responsive layout optimized for desktop, tablet, and mobile devices.
+
+## **Technologies Used**  
+- **Frontend**:  
+  - React.js
+  - Tailwind CSS  
+  - daisy UI  
+  - React-tooltip  
+  - React-simple-typewriter  
+  - React Awesome Reveal  
+
+- **Backend**:  
+  - Node.js  
+  - Express.js  
+  - MongoDB  
+
+- **Authentication**:  
+  - Firebase Authentication  
+
+- **Data Visualization**:  
+  - Recharts  
+
+## **Dependencies**  
+The following dependencies were used in this project:
+- React
+- React-router-dom
 - Tailwind CSS
-- daisy UI
-- Recharts 
+- Firebase
+- MongoDB
+- Express.js
+- Recharts
+- daisyUI
 - React-tooltip
 - React-simple-typewriter
-- React Awesome reveal 
+- React Awesome Reveal  
+
+## **Getting Started**  
+
+To run this project on your local machine, follow these steps:
+
+### 1. Clone the repository:
+```git clone https://github.com/ImArijitBasu/Chill-Gamer-client```
 
